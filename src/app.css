@@ -1,3 +1,108 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+:root {
+	--pure-white: #ffffff;
+	--primary-color: #618994;
+	--secondary-color: #ffcd00;
+	--core-background-bg-neutral-light: #f6f5f5;
+	--components-footer-footer-bg: #dcdcdc;
+	--components-footer-footer-text: #504f4f;
+	--palette-gray-gray-500: #c3c2c2;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smooth: never;
+}
+
+html:has(dialog[open]) {
+	overflow: hidden;
+	scrollbar-gutter: stable;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #eeeeee;
+	border-radius: 100vw;
+	/* margin-block: .5em */
+}
+
+::-webkit-scrollbar-thumb {
+	background: #dddddd;
+	border-radius: 100vw;
+}
+
+::-webkit-scrollbar-hover {
+	/* background: #ffffff; */
+}
+
+@layer base {
+	html {
+		font-family: 'ui-sans-serif', system-ui, sans-serif;
+		height: 100%;
+		overflow: auto;
+		@apply h-full overflow-auto;
+		background-color: #ffffff;
+	}
+
+	body {
+		min-height: 100vh;
+		background-color: #000000;
+		/* margin: 5px; */
+	}
+	main {
+		min-height: 95vh;
+		padding: 5px;
+		border: solid 5px #0000ff;
+		background-color: #fff;
+	}
+
+	* {
+		-webkit-tap-highlight-color: transparent;
+	}
+	a {
+		color: var(--color-theme-1);
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	h1 {
+		@apply text-4xl;
+	}
+
+	h2 {
+		@apply text-3xl;
+	}
+
+	h3 {
+		@apply text-2xl;
+	}
+
+	h4 {
+		@apply text-xl;
+	}
+
+	h5 {
+		@apply text-lg;
+	}
+
+	h6 {
+		@apply text-base;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'ui-sans-serif', 'ui-monospace';
+		/* @apply font-extrabold tracking-wide; */
+	}
+}
