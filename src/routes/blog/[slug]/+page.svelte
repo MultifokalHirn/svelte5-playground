@@ -1,16 +1,26 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { Blog } from '$lib/types/types';
 
-	let { data }: { data: PageData } = $props();
+	let { data }: { data: { post: Blog } } = $props();
 
-	let wordCount = $state(data.content.split(' ').length);
+	let wordCount = $state(data.post.content.split(' ').length);
 	let estimatedReadingTime = $derived(wordCount / 250);
-
-	interface Props {
-		title: string;
-		content: string;
-	}
 </script>
 
-<h1>{title}</h1>
-<p>{content}</p>
+<div class="container">
+	<h1>{data.post.title}</h1>
+	<p>{data.post.content}</p>
+
+	<p>Word Count: {wordCount}</p>
+	<p>Estimated Reading Time: {estimatedReadingTime} minutes</p>
+</div>
+
+lol
+
+<style>
+	div.container {
+		background-color: #f1f1f1;
+		border: 1px solid #ccc;
+		padding: 10px;
+	}
+</style>

@@ -1,9 +1,9 @@
-import type { PageServerLoad } from './$types';
+// import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ fetch }) => {
-	const response = await fetch('/api/user');
+// export const load: PageServerLoad = async ({ fetch }) => {
+// 	const response = await fetch('/api/user');
 
-	return {
-		user: await response.json()
-	};
-};
+// 	return {
+// 		user: await response.json()
+// 	};
+// };

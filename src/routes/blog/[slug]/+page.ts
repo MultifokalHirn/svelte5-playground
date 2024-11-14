@@ -5,5 +5,5 @@ export function load({ params }) {
 	const post = blog.find((post) => post.slug === params.slug);
 
 	if (!post) throw error(404);
-	return post;
+	return { post };
 }
