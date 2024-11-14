@@ -28,10 +28,10 @@
 	<meta name="description" content="Beschreibung" />
 </svelte:head>
 
-<Header {svelteVersion}></Header>
+<Header></Header>
 <main class="grow">
-	<button onclick={switchVersion}>Switch Version</button>
-	<lw-divider> </lw-divider>
+	<!-- <button onclick={switchVersion}>Switch Version</button> -->
+	<!-- <lw-divider> </lw-divider> -->
 	{@render children()}
 </main>
 <Footer />

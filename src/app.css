@@ -54,10 +54,16 @@ html:has(dialog[open]) {
 		/* margin: 5px; */
 	}
 	main {
-		min-height: 95vh;
-		padding: 5px;
-		border: solid 5px #0000ff;
+		min-height: 87vh;
+		padding: 2%;
+		border-top: dotted 5px #0000ff;
+		/* border-bottom: dotted 5px #0000ff; */
 		background-color: #fff;
+		button {
+			border: solid 2px #0000ff;
+			background-color: #000;
+			color: #fff;
+		}
 	}
 
 	* {
@@ -68,17 +74,14 @@ html:has(dialog[open]) {
 		text-decoration: none;
 	}
 
-	button {
-		border: solid 2px #0000ff;
-		background-color: #000;
-		color: #fff;
-	}
 	a:hover {
 		text-decoration: underline;
 	}
 
 	h1 {
 		@apply text-4xl;
+		text-decoration: underline;
+		padding-bottom: 5px;
 	}
 
 	h2 {

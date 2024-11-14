@@ -1,13 +1,6 @@
-import { blog } from '$lib/data/blog';
-import type { PageServerLoad } from '../$types';
-let user;
+import { blog } from '$lib/data/blog'
+import type { PageServerLoad } from './$types'
 
 export const load: PageServerLoad = () => {
-	user = 'John Doe';
-
-	return { user, blog };
-};
-
-// export const actions = {
-// 	default: async ({ request }) => {}
-// } satisfies Actions;
+	return { blog }
+}
