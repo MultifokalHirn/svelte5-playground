@@ -1,7 +1,7 @@
 <script lang="ts">
 	// store in which page the user is currently on
 	import { page } from '$app/stores';
-	let currentPage: string;
+
 	function isCurrentPage(href: string) {
 		return currentPage === href;
 	}
@@ -12,7 +12,7 @@
 		{ name: 'organization', href: '/organization' }
 	];
 
-	$: currentPage = $page.url.pathname;
+	let currentPage: string = $derived($page.url.pathname);
 </script>
 
 {#each links as link}
