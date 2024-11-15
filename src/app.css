@@ -80,8 +80,15 @@ html:has(dialog[open]) {
 
 	h1 {
 		@apply text-4xl;
+		padding-top: 3px;
+		padding-bottom: 8px;
+	}
+
+	h1.title {
+		@apply text-5xl;
 		text-decoration: underline;
 		padding-bottom: 5px;
+		padding-bottom: 4%;
 	}
 
 	h2 {
@@ -112,5 +119,13 @@ html:has(dialog[open]) {
 	h6 {
 		font-family: 'ui-sans-serif', 'ui-monospace';
 		/* @apply font-extrabold tracking-wide; */
+	}
+
+	.tag {
+		font-style: italic;
+		font-family: monospace;
+		font-size: large;
+		color: #00f;
+		margin-bottom: 20px;
 	}
 }

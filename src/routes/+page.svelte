@@ -1,7 +1,10 @@
 <script lang="ts">
+	export const prerender = true
+	export const ssr = false
+	export const csr = false
 </script>
 
-<h1>Home</h1>
+<h1 class="title">Home</h1>
 
 <section>
 	Fusce sed turpis eget sapien finibus pretium at non nisi. Curabitur hendrerit mi non mauris

@@ -8,7 +8,7 @@
 	let { post }: Props = $props()
 </script>
 
-<h1>{post.title}</h1>
+<h1 class="title">{post.title}</h1>
 {#if post.page}
 	<p>{post.page}</p>
 {/if}
