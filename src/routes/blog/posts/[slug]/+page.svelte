@@ -1,41 +1,41 @@
 <script lang="ts">
 	import BlogPostPreview from '$lib/components/BlogPostPreview.svelte'
 	import type { BlogPost } from '$lib/types/types'
-	export let data
-	let { post, otherPosts }: { post: BlogPost; otherPosts: BlogPost[] } = data
 
-	const wordCount = post.content ? post.content.split(' ').length : 0
+	let { data }: { data: { post: BlogPost; otherPosts: BlogPost[] } } = $props()
+	// let { post, otherPosts }: { post: BlogPost; otherPosts: BlogPost[] } = data
+	const wordCount = data.post.content ? data.post.content.split(' ').length : 0
 
 	const estimatedReadingTime = Math.trunc(wordCount / 250)
 </script>
 
 <div class="height-full container flex flex-col justify-between">
 	<div class="post justify-start">
-		<h1>{post.title}</h1>
+		<h1>{data.post.title}</h1>
 
 		<!-- <p class="meta">Word Count: {wordCount}</p> -->
 		<p class="meta">Estimated Reading Time: {estimatedReadingTime} minute(s)</p>
-		{#if post.image}
-			<img src={post.image} alt={post.title} />
+		{#if data.post.image}
+			<img src={data.post.image} alt={data.post.title} />
 		{/if}
-		{#if post.tags}
-			{#each post.tags as tag}
+		{#if data.post.tags}
+			{#each data.post.tags as tag}
 				<span class="tag">{tag}</span>
 			{/each}
 		{/if}
-		{#if post.date}
-			<p class="date">{post.date}</p>
+		{#if data.post.date}
+			<p class="date">{data.post.date}</p>
 		{/if}
-		{#if post.page}
-			<p class="page">{post.page}</p>
+		{#if data.post.page}
+			<p class="page">{data.post.page}</p>
 		{/if}
-		{#if post.content}
-			<p>{post.content}</p>
+		{#if data.post.content}
+			<p>{data.post.content}</p>
 		{/if}
 	</div>
 	<div class="other-posts flex flex-col justify-start">
 		<h1 class="title">Other Posts</h1>
-		{#each otherPosts as otherPost (otherPost.slug)}
+		{#each data.otherPosts as otherPost (otherPost.slug)}
 			<div class="other-post flex justify-end">
 				<BlogPostPreview post={otherPost} />
 			</div>
