@@ -22,9 +22,9 @@
 	let logoPath = $derived(logoFiles[currentLogo])
 </script>
 
-<button onclick={switchLogo} class="logo-container">
+<a href={'/'} onmouseenter={switchLogo} onmouseleave={switchLogo} class="logo-container">
 	<img src={logoPath} alt="Logo" class="logo" />
-</button>
+</a>
 
 <style>
 	.logo-container {

@@ -15,11 +15,11 @@
 	let currentPage: string = $derived($page.url.pathname)
 </script>
 
-<div class="min-w-30 flex max-w-80 flex-row justify-between">
+<nav class="min-w-30 flex max-w-80 flex-row justify-between">
 	{#each links as link}
 		<a href={link.href} class={isCurrentPage(link.href) ? 'active' : ''}>{link.name}</a>
 	{/each}
-</div>
+</nav>
 
 <style>
 	a {

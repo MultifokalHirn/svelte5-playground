@@ -1,27 +1,43 @@
 <script lang="ts">
 	import BlogPostPreview from '$lib/components/BlogPostPreview.svelte'
-	import type { Blog } from '$lib/types/types'
+	import type { BlogPost } from '$lib/types/types'
+	export let data
+	let { post, otherPosts }: { post: BlogPost; otherPosts: BlogPost[] } = data
 
-	let { data }: { data: { post: Blog; otherPosts: Blog[] } } = $props()
+	const wordCount = post.content ? post.content.split(' ').length : 0
 
-	let wordCount = $state(data.post.content.split(' ').length)
-	let estimatedReadingTime = $derived(Math.trunc(wordCount / 250))
+	const estimatedReadingTime = Math.trunc(wordCount / 250)
 </script>
 
 <div class="height-full container flex flex-col justify-between">
 	<div class="post justify-start">
-		<h1>{data.post.title}</h1>
+		<h1>{post.title}</h1>
 
 		<!-- <p class="meta">Word Count: {wordCount}</p> -->
 		<p class="meta">Estimated Reading Time: {estimatedReadingTime} minute(s)</p>
-
-		<p>{data.post.content}</p>
+		{#if post.image}
+			<img src={post.image} alt={post.title} />
+		{/if}
+		{#if post.tags}
+			{#each post.tags as tag}
+				<span class="tag">{tag}</span>
+			{/each}
+		{/if}
+		{#if post.date}
+			<p class="date">{post.date}</p>
+		{/if}
+		{#if post.page}
+			<p class="page">{post.page}</p>
+		{/if}
+		{#if post.content}
+			<p>{post.content}</p>
+		{/if}
 	</div>
 	<div class="other-posts flex flex-col justify-start">
 		<h1 class="title">Other Posts</h1>
-		{#each data.otherPosts as post (post.slug)}
+		{#each otherPosts as otherPost (otherPost.slug)}
 			<div class="other-post flex justify-end">
-				<BlogPostPreview title={post.title} content={post.content} slug={post.slug} />
+				<BlogPostPreview post={otherPost} />
 			</div>
 		{/each}
 	</div>

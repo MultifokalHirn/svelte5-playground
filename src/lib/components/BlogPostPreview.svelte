@@ -1,18 +1,23 @@
 <script lang="ts">
+	import type { BlogPost } from '$lib/types/types'
+
 	interface Props {
-		title: string
-		content: string
-		slug: string
+		post: BlogPost
 	}
 
-	let { title, content, slug }: Props = $props()
+	let { post }: Props = $props()
 	// this renders a box which only shows the title and firsat 100 characters of the content
 </script>
 
 <div class="preview">
-	<a href={`/blog/${slug}`}>
-		<h2>{title}</h2>
-		<p class="preview-content">{content.substring(0, 300)}</p>
+	<a href={`/blog/posts/${post.slug}`}>
+		<h2>{post.title}</h2>
+		{#if post.image}
+			<img src={post.image} alt={post.title} />
+		{/if}
+		{#if post.content}
+			<p class="preview-content">{post.content.substring(0, 300)}</p>
+		{/if}
 	</a>
 </div>
 

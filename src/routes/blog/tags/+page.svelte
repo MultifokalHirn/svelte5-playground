@@ -6,12 +6,7 @@
 	const { blog, tags }: { blog: BlogPost[]; tags: Tags } = data
 </script>
 
-<h1>Blog</h1>
-{#each blog as post (post.slug)}
-	<BlogPostPreview {post} />
-{/each}
-
-<h2><a href="/blog/tags">Tags</a></h2>
+<h1>Tags</h1>
 {#each Object.keys(tags) as tagName}
 	<h2>{tagName}</h2>
 	{#if tags[tagName].posts}

@@ -1,11 +1,14 @@
 <script lang="ts">
+	import type { BlogPost } from '$lib/types/types'
+
 	interface Props {
-		title: string;
-		content: string;
+		post: BlogPost
 	}
 
-	let { title, content, slug }: Props = $props();
+	let { post }: Props = $props()
 </script>
 
-<h1>{title}</h1>
-<p>{content}</p>
+<h1>{post.title}</h1>
+{#if post.page}
+	<p>{post.page}</p>
+{/if}
