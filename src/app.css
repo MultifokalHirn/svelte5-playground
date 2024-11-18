@@ -1,6 +1,9 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Almendra+Display&family=Aref+Ruqaa:wght@400;700&family=Barrio&family=Blaka+Hollow&family=Bonbon&family=Cairo+Play:wght@200..1000&family=Cinzel+Decorative:wght@400;700;900&family=Eater&family=Frijole&family=Grenze+Gotisch:wght@100..900&family=Handjet:wght@100..900&family=Jacquard+12&family=Jacquarda+Bastarda+9&family=Kablammo&family=Macondo+Swash+Caps&family=Micro+5&family=Micro+5+Charted&family=Mountains+of+Christmas:wght@400;700&family=Mystery+Quest&family=Nosifer&family=Passero+One&family=Rubik+Burned&family=Rubik+Puddles&family=Snowburst+One&family=UnifrakturCook:wght@700&display=swap');
+/* @import 'font-faces.css'; */
+/* @import url('fonts.css'); */
 
 :root {
 	--pure-white: #ffffff;
@@ -52,6 +55,7 @@ html:has(dialog[open]) {
 		min-height: 100vh;
 		background-color: #000000;
 		/* margin: 5px; */
+		font-family: 'Bonbon', 'Blaka Hollow';
 	}
 	main {
 		min-height: 87vh;
@@ -117,7 +121,7 @@ html:has(dialog[open]) {
 	h4,
 	h5,
 	h6 {
-		font-family: 'ui-sans-serif', 'ui-monospace';
+		font-family: 'Grenze Gotisch', 'ui-monospace';
 		/* @apply font-extrabold tracking-wide; */
 	}
 
@@ -127,5 +131,9 @@ html:has(dialog[open]) {
 		font-size: large;
 		color: #00f;
 		margin-bottom: 20px;
+	}
+
+	@font-face {
+		font-display: swap;
 	}
 }

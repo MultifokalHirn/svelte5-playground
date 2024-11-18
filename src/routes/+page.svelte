@@ -1,5 +1,4 @@
 <script lang="ts">
-	export const prerender = true
 	export const ssr = false
 	export const csr = false
 </script>
@@ -38,3 +37,11 @@
 	Vestibulum eu metus quis urna posuere semper in vel quam. Aenean sit amet tempor mauris, eu semper
 	dolor.
 </section>
+
+<style>
+	section {
+		font-family: Aref Ruqaa;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+</style>

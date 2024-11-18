@@ -25,8 +25,7 @@
 	a {
 		color: #000000;
 		text-decoration: none;
-		font-family: monospace;
-		font-size: x-large;
+		font-family: 'Handjet', monospace;
 		margin: 10px 10px 5px 10px;
 	}
 	a:hover {

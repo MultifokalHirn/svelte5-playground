@@ -1,7 +1,8 @@
 <script lang="ts">
-	import Footer from '$lib/components/Footer.svelte'
-	import Header from '$lib/components/Header.svelte'
+	import Footer from '$lib/components/layout/Footer.svelte'
+	import Header from '$lib/components/layout/Header.svelte'
 	import '../app.css'
+	// import '../font-faces.css'
 	import type { LayoutData } from './$types'
 
 	let { data, children }: { data: LayoutData; children: () => any } = $props()
